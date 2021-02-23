@@ -1,4 +1,4 @@
 zmqpass.txt
 *.so
 profile.pid
-error.log
+*.log
