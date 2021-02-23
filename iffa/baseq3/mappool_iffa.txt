@@ -26,7 +26,7 @@ hiddenfortress|iffa
 # limbus|iffa
 longestyard|iffa
 # lostworld|iffa
-monastery|iffa
+# monastery|iffa
 # namelessplace|iffa
 overkill|iffa
 # purgatory|iffa
@@ -47,3 +47,4 @@ trinity|iffa
 warehouse|iffa
 # wargrounds|iffa
 # windsongkeep|iffa
+spillway|iffa
