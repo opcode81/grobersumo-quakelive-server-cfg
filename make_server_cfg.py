@@ -12,7 +12,7 @@ class ServerCfg:
     def read(self, cfg_path):
         with open(cfg_path, "r") as f:
             content = f.read()
-            for key, value in re.findall(r'set (\w+)\s+"(.*?)"', content, re.MULTILINE):
+            for key, value in re.findall(r'^set (\w+)\s+"(.*?)"', content, re.MULTILINE):
                 self.d[key] = value
 
     def write(self, cfg_path):
