@@ -28,8 +28,9 @@ if __name__ == '__main__':
         sys.exit(1)
 
     cfg = ServerCfg()
-    cfg.read("server.base.cfg")
-    cfg.read(os.path.join(argv[0], "baseq3", "server.additional.cfg"))
-    cfg.write(os.path.join(argv[0], "baseq3", "server.cfg"))
+    root = os.path.dirname(os.path.realpath(__file__))
+    cfg.read(os.path.join(root, "server.base.cfg"))
+    cfg.read(os.path.join(root, argv[0], "baseq3", "server.additional.cfg"))
+    cfg.write(os.path.join(root, argv[0], "baseq3", "server.cfg"))
 
 
