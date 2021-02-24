@@ -1,0 +1,11 @@
+[{
+	"id": "wffa",
+	"title": "All Weapons FFA",
+	"author": "id Software",
+	"description": "FFA but start with all weapons.",
+	"basegt": "ffa",
+	"cvars": {
+    "g_weaponrespawn": "1",
+    "g_startingWeapons": "255"
+	}
+}]
