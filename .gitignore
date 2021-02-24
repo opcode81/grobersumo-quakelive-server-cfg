@@ -2,3 +2,5 @@ zmqpass.txt
 *.so
 profile.pid
 *.log
+server.cfg
+/.idea
