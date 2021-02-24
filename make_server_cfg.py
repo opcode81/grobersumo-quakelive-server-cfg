@@ -18,7 +18,7 @@ class ServerCfg:
     def write(self, cfg_path):
         with open(cfg_path, "w") as f:
             for k, v in self.d.items():
-                f.write(f'set {k} "{v}"\n')
+                f.write('set %s "%s"\n' % (k, v))
 
 
 if __name__ == '__main__':
