@@ -4,3 +4,5 @@ profile.pid
 *.log
 server.cfg
 /.idea
+mappool.txt
+minqlx.*
