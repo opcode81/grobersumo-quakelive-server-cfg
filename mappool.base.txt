@@ -17,3 +17,5 @@ retribution
 theoldendomain
 trinity
 spillway
+arenagate
+cobaltstation
