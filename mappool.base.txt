@@ -19,3 +19,5 @@ trinity
 spillway
 arenagate
 cobaltstation
+powerstation
+fatalinstinct
