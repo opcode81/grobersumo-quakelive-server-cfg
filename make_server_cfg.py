@@ -28,12 +28,13 @@ if __name__ == '__main__':
         print("usage: make_server_cfg.py <folder name containing baseq3/server.add.cfg>")
         sys.exit(1)
 
-    with open("workshop.base.txt", "r") as f:
+    root = os.path.dirname(os.path.realpath(__file__))
+
+    with open(os.path.join(root, "workshop.base.txt"), "r") as f:
         lines = [l.strip() for l in f.readlines()]
         workshopItems = [l for l in lines if len(l) > 0 and l[0] != "#"]
 
     cfg = ServerCfg()
-    root = os.path.dirname(os.path.realpath(__file__))
     cfg.read(os.path.join(root, "server.base.cfg"))
     cfg.read(os.path.join(root, argv[0], "baseq3", "server.additional.cfg"))
     cfg.d["qlx_workshopReferences"] = ", ".join(workshopItems)
