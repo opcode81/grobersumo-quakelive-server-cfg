@@ -21,3 +21,6 @@ arenagate
 cobaltstation
 powerstation
 fatalinstinct
+hellsgateredux
+lostworls
+
