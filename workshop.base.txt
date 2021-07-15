@@ -3,7 +3,6 @@
 539421606
 # Duke Nukem Voice Sound Pack for minqlx
 572453229
-2365151900
 # map: rush
 2335886435
 # map: aty3dm6 (a day at the villa)
