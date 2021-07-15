@@ -1,10 +1,8 @@
 aerowalk
 almostlost
 asylum
-brimstoneabbey
 campgrounds
 demonkeep
-dredwerkz
 eviscerated
 grimdungeons
 hearth
@@ -22,5 +20,7 @@ cobaltstation
 powerstation
 fatalinstinct
 hellsgateredux
-lostworls
-
+lostworld
+thunderstruck
+drunkenmummy
+deadandgone
