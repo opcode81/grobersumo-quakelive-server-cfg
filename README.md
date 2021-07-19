@@ -7,6 +7,24 @@ This project contains server configuration files for the Grobersume Quake Live s
 
 Our scripts require Python 3 to run.
 
+## Quake Live Dedicated Server Installation
+
+Requirements:
+
+* **Steam** for Linux (with steamcmd) installed, **Python 3** is installed
+
+* User `steam` exists and has rights to write to the steamcmd directory
+
+* Additional requirements which can be installed via apt-get:
+
+  `sudo apt-get -y install redis-server git build-essential`
+
+To install the server along with minqlx, simply run the installation script as a sudo-capable user:
+
+    sh install_qlds.sh
+
+For configured paths, inspect the script if necessary.
+
 ## Linux Services
 
 We use [systemctl](https://www.freedesktop.org/software/systemd/man/systemctl.html) to control server (re)start and shutdown.
@@ -34,6 +52,11 @@ After the unit file has been created, we can enable and start the server as foll
 
     sudo systemctl enable ql-instagib
     sudo systemctl start ql-instagib
+
+### Convenience Scripts
+
+* `restart_iffa.sh`, `restart_wffa.sh` to restart the servers
+* `stop_all.sh` to stop all servers
 
 ## Quake Live Server Configuration
 
