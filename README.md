@@ -7,29 +7,31 @@ This project contains server configuration files for the Grobersume Quake Live s
 
 Our scripts require Python 3 to run.
 
-## Quake Live Dedicated Server Installation
+## Quake Live Dedicated Server Installation under Ubuntu Linux
 
 Requirements:
 
-* **Steam** for Linux (with steamcmd) installed, **Python 3** is installed
-
-* User `steam` exists and has rights to write to the steamcmd directory
-
+* [**steamcmd** is installed](https://help.skysilk.com/support/solutions/articles/9000181921-how-to-install-and-use-steamcmd-on-ubuntu-linux) and accessible to user `steam` under `/home/steam/.steam/steamcmd` 
+* **Python 3** is installed
 * Additional requirements which can be installed via apt-get:
 
   `sudo apt-get -y install redis-server git build-essential`
 
-To install the server along with minqlx, simply run the installation script as a sudo-capable user:
+Given these requirements, the actual dedicated server along with minqlx extensions can be installed by executing the following command as a sudo-capable user:
 
     sh install_qlds.sh
-
-For configured paths, inspect the script if necessary.
 
 ## Linux Services
 
 We use [systemctl](https://www.freedesktop.org/software/systemd/man/systemctl.html) to control server (re)start and shutdown.
 
-The systemd units use the shell scripts `launch_<server_name>.sh` to start the servers. For instance, for the iffa server, we create a systemd unit as follows under `/etc/systemd/system/ql-instagib.service`:
+The systemd units use the shell scripts `launch_<server_name>.sh` to start the servers. 
+
+We create a systemd unit for each server:
+  * `/etc/systemd/system/ql-instagib.service` for the `iffa` server
+  * `/etc/systemd/system/ql-allweapons.service` for the `wffa` server
+
+These are the contents of the former,
 
     [Unit]
     Description=Quake Live Instagib
@@ -48,7 +50,7 @@ The systemd units use the shell scripts `launch_<server_name>.sh` to start the s
 
 where the password needs to be set for stats to end up on qlstats.
 
-After the unit file has been created, we can enable and start the server as follows:
+After a unit file has been created, we can enable and start the service as follows:
 
     sudo systemctl enable ql-instagib
     sudo systemctl start ql-instagib
@@ -62,7 +64,7 @@ After the unit file has been created, we can enable and start the server as foll
 
 Our configuration system factors out configuration that is common to all servers in the file `server.base.cfg`.
 
-Settings specific to a server are to be set in `<server name>/baseq3/server.additional.cfg`.
+Settings specific to a server are to be set in `<server name>/baseq3/server.additional.cfg` and may override settings already defined in the base configuration.
 
 The actual server configuration file `<server name>/baseq3/server.cfg` is automatically created by running:
 
