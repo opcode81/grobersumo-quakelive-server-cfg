@@ -1,3 +1,4 @@
+#!/bin/sh
 ROOT=`pwd`
 STEAMCMD_DIR="/home/steam/.steam/steamcmd"
 QLDS_SUBDIR="steamapps/common/qlds"
