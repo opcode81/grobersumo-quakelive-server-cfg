@@ -5,19 +5,16 @@ This project contains server configuration files for the Grobersume Quake Live s
 * `iffa`: instagib free for all
 * `wffa`: free for all with CA weapons at spawn
 
-Our scripts require Python 3 to run.
-
 ## Quake Live Dedicated Server Installation under Ubuntu Linux
 
 Requirements:
 
 * [**steamcmd** is installed](https://help.skysilk.com/support/solutions/articles/9000181921-how-to-install-and-use-steamcmd-on-ubuntu-linux) and accessible to user `steam` under `/home/steam/.steam/steamcmd` 
-* **Python 3** is installed
-* Additional requirements which can be installed via apt-get:
+* Requirements which can be installed via apt-get:
 
-  `sudo apt-get -y install redis-server git build-essential`
+  `sudo apt-get -y install python3 redis-server git build-essential`
 
-Given these requirements, the actual dedicated server along with minqlx extensions can be installed by executing the following command as a sudo-capable user:
+Given these requirements, the actual dedicated server (along with minqlx extensions) can be installed by executing the following command as a sudo-capable user:
 
     sh install_qlds.sh
 
