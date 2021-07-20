@@ -61,10 +61,16 @@ After a unit file has been created, we can enable and start the service as follo
     sudo systemctl enable ql-instagib
     sudo systemctl start ql-instagib
 
-### Convenience Scripts
+**Convenience Scripts**
 
 * `restart_iffa.sh`, `restart_wffa.sh` to restart the servers
 * `stop_all.sh` to stop all servers
+
+**Service Logs**
+
+Use `journalctl` to view service logs, e.g. for service `ql-instagib` as follows in order to view the latest log messages first (`-r`):
+
+    sudo journalctl -u ql-instagib -r
 
 ## Quake Live Server Configuration
 
