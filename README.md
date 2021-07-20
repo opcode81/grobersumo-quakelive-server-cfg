@@ -7,16 +7,25 @@ This project contains server configuration files for the Grobersume Quake Live s
 
 ## Quake Live Dedicated Server Installation under Ubuntu Linux
 
-Requirements:
+**Requirements**
 
 * [**steamcmd** is installed](https://help.skysilk.com/support/solutions/articles/9000181921-how-to-install-and-use-steamcmd-on-ubuntu-linux) and accessible to user `steam` under `/home/steam/.steam/steamcmd` 
+
+* The contents of this repository are under `/home/steam/.quakelive`
+
 * Requirements which can be installed via apt-get:
 
   `sudo apt-get -y install python3 redis-server git build-essential`
 
+**Server Installation**
+
 Given these requirements, the actual dedicated server (along with minqlx extensions) can be installed by executing the following command as a sudo-capable user:
 
     sh install_qlds.sh
+
+**Stats Secret**
+
+For player stats to be transferred, create the file `/home/steam/.quakelive/zmq_stats_password.txt` and write the password to it (without a trailing newline).
 
 ## Linux Services
 
@@ -35,7 +44,7 @@ These are the contents of the former,
     After=syslog.target
     
     [Service]
-    ExecStart="/home/steam/.quakelive/launch_iffa.sh" <zmq_stats_password>
+    ExecStart="/home/steam/.quakelive/launch.sh" iffa
     User=steam
     Group=steam
     Restart=on-failure
@@ -45,7 +54,7 @@ These are the contents of the former,
     [Install]
     WantedBy=multi-user.target
 
-where the password needs to be set for stats to end up on qlstats.
+where we have passed the subdirectory where the server configuration is located, `iffa`, as an argument.
 
 After a unit file has been created, we can enable and start the service as follows:
 

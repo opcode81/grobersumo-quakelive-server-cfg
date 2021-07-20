@@ -43,7 +43,8 @@ if __name__ == '__main__':
     with open(os.path.join(root, argv[0], "baseq3", "workshop.txt"), "w") as f:
         for w in workshopItems:
             f.write(w + "\n")
-    
-    
 
-
+    with open("zmq_stats_password.txt", "r") as f:
+        zmq_stats_password = f.read().strip()
+    with open(os.path.join(root, argv[0], "baseq3", "zmqpass.txt"), "w") as f:
+        f.write("stats_stats=" + zmq_stats_password)
