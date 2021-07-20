@@ -29,3 +29,9 @@ aty3dm6
 uzul3
 aerospace
 13black
+wheezy
+airsick
+grizz
+swift
+gleed
+kidcooler
