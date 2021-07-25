@@ -1,8 +1,6 @@
-# one line per entry
+# one line per entry (id from steam link)
 # ql extras pack with 14 maps: arenagate, blastradius, bloodrunblue, campgroundsblue, cobaltstation, deathfactory, distantscreams, evilplayground, focalpoint, forgotten, golgothacore, hellsgateredux, powerstation, sacellum
 539421606
-# Duke Nukem Voice Sound Pack for minqlx
-572453229
 # map: rush
 2335886435
 # map: aty3dm6 (a day at the villa)

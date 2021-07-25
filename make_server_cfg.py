@@ -19,7 +19,13 @@ class ServerCfg:
         with open(cfg_path, "w") as f:
             for k, v in self.d.items():
                 f.write('set %s "%s"\n' % (k, v))
-    
+
+
+def readWorkshopItems(path):
+    with open(os.path.join(root, path), "r") as f:
+        lines = [l.strip() for l in f.readlines()]
+        workshopItems = [l for l in lines if len(l) > 0 and l[0] != "#"]
+    return workshopItems
 
 
 if __name__ == '__main__':
@@ -30,18 +36,17 @@ if __name__ == '__main__':
 
     root = os.path.dirname(os.path.realpath(__file__))
 
-    with open(os.path.join(root, "workshop.base.txt"), "r") as f:
-        lines = [l.strip() for l in f.readlines()]
-        workshopItems = [l for l in lines if len(l) > 0 and l[0] != "#"]
+    workshopItems = readWorkshopItems("workshop.base.txt")
+    forcedWorkshopItems = readWorkshopItems("workshop_forced.base.txt")
 
     cfg = ServerCfg()
     cfg.read(os.path.join(root, "server.base.cfg"))
     cfg.read(os.path.join(root, argv[0], "baseq3", "server.additional.cfg"))
-    cfg.d["qlx_workshopReferences"] = ", ".join(workshopItems)
+    cfg.d["qlx_workshopReferences"] = ", ".join(forcedWorkshopItems)
     cfg.write(os.path.join(root, argv[0], "baseq3", "server.cfg"))
     
     with open(os.path.join(root, argv[0], "baseq3", "workshop.txt"), "w") as f:
-        for w in workshopItems:
+        for w in workshopItems + forcedWorkshopItems:
             f.write(w + "\n")
 
     with open(os.path.join(root, "zmq_stats_password.txt"), "r") as f:

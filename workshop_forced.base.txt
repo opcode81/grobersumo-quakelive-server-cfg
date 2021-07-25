@@ -1,0 +1,3 @@
+# workshop items that clients are forced to download
+# (required e.g. for soundpacks)
+# one line per entry (id from steam link)
