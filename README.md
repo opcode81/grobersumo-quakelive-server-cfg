@@ -72,6 +72,14 @@ Use `journalctl` to view service logs, e.g. for service `ql-instagib` as follows
 
     sudo journalctl -u ql-instagib -r
 
+**Periodic Restart**
+
+We restart servers daily to fix the problem where bots are not cleared from the player slits. Specifically, we configure a cron job for the root user that runs the restart script every day at 5 o'clock:
+
+    # m h  dom mon dow   command
+    0 5 * * *   /home/steam/.quakelive/restart_iffa.sh
+
+
 ## Quake Live Server Configuration
 
 Our configuration system factors out configuration that is common to all servers in the file `server.base.cfg`.
