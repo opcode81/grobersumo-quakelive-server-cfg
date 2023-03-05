@@ -1,20 +1,21 @@
 #!/bin/sh
+STEAMCMD="/usr/games/steamcmd"
 ROOT=`pwd`
-STEAMCMD_DIR="/home/steam/Steam"
+STEAM_DIR="/home/steam/Steam"
 QLDS_SUBDIR="steamapps/common/qlds"
 
-QLDS_DIR="${STEAMCMD_DIR}/${QLDS_SUBDIR}"
+QLDS_DIR="${STEAM_DIR}/${QLDS_SUBDIR}"
 echo "QLDS_DIR=$QLDS_DIR"
+
+# Quake Live Dedicated Server installation
+echo "Installing Quake Live Dedicated Server via steamcmd"
+cd $STEAM_DIR
 
 # run the following section (until EOF) as user 'steam'
 sudo -u steam bash << EOF
 whoami
 
-# Quake Live Dedicated Server installation
-echo "Installing Quake Live Dedicated Server via steamcmd"
-cd $STEAMCMD_DIR
-./steamcmd.sh +login anonymous +force_install_dir ./${QLDS_SUBDIR}/ +app_update 349090 +quit 
-
+$STEAMCMD +force_install_dir $QLDS_DIR/ +login anonymous +app_update 349090 +quit
 # minqlx installation
 # see: https://github.com/MinoMino/minqlx
 cd /tmp
