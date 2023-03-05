@@ -15,7 +15,7 @@ This project contains server configuration files for the Grobersume Quake Live s
 
 * Requirements which can be installed via apt-get:
 
-  `sudo apt-get -y install python3 redis-server git build-essential`
+  `sudo apt-get -y install python3 python3-dev redis-server git build-essential`
 
 **Server Installation**
 
