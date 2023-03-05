@@ -9,7 +9,7 @@ This project contains server configuration files for the Grobersume Quake Live s
 
 **Requirements**
 
-* [Install **steamcmd**](https://developer.valvesoftware.com/wiki/SteamCMD#Downloading_SteamCMD) for the user `steam`, making sure that `steamcmd.sh` is available under `/home/steam/.steam/steamcmd.sh` (i.e. we deviate from the instructions, changing the directory name from `Steam` to `.steam`) 
+* [Install **steamcmd**](https://developer.valvesoftware.com/wiki/SteamCMD#Downloading_SteamCMD) for the user `steam`, such that `steamcmd.sh` is available under `/home/steam/Steam/steamcmd.sh` 
 
 * The contents of this repository are under `/home/steam/.quakelive`
 

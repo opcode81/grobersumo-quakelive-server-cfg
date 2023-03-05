@@ -1,6 +1,6 @@
 #!/bin/sh
 ROOT=`pwd`
-STEAMCMD_DIR="/home/steam/.steam"
+STEAMCMD_DIR="/home/steam/Steam"
 QLDS_SUBDIR="steamapps/common/qlds"
 
 QLDS_DIR="${STEAMCMD_DIR}/${QLDS_SUBDIR}"
